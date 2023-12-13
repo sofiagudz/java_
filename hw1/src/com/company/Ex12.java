@@ -22,7 +22,6 @@ public class Ex12 {
                 System.out.println("You must enter 1 or 2!!!");
             }
         }while(sortBy > 2 || sortBy < 1);
-
         sort(array, sortBy);
     }
     public static void sort(int[] array, int sortBy){

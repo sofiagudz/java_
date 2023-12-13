@@ -32,14 +32,14 @@ public class Fraction {
         }
     }
 
-    public static Fraction sum(Fraction f1, Fraction f2){
+    public Fraction sum(Fraction f1, Fraction f2){
         int f3Denominator = Math.nok(f1.denominator, f2.denominator);
         int f3Numerator = f1.numerator * (f3Denominator / f1.denominator) + f2.numerator * (f3Denominator / f2.denominator);
 
         Fraction f3 = new Fraction(f3Numerator, f3Denominator);
         return f3;
     }
-    public static Fraction subtraction(Fraction f1, Fraction f2){
+    public Fraction subtraction(Fraction f1, Fraction f2){
         int f3Denominator = Math.nok(f1.denominator, f2.denominator);
         int f3Numerator = f2.numerator * (f3Denominator / f2.denominator) - f1.numerator * (f3Denominator / f1.denominator);
         if(f3Numerator == 0){
@@ -49,7 +49,7 @@ public class Fraction {
         Fraction f3 = new Fraction(f3Numerator, f3Denominator);
         return f3;
     }
-    public static Fraction multiplication(Fraction f1, Fraction f2){
+    public Fraction multiplication(Fraction f1, Fraction f2){
         int f3Denominator = f1.denominator * f2.denominator;
         int f3Numerator = f1.numerator * f2.numerator;
         int nod = Math.nod(f3Numerator, f3Denominator);
@@ -59,7 +59,11 @@ public class Fraction {
         Fraction f3 = new Fraction(f3Numerator, f3Denominator);
         return f3;
     }
-    public static Fraction division(Fraction f1, Fraction f2){
+    public Fraction division(Fraction f1, Fraction f2){
+        if(f2.numerator == 0){
+            System.out.println("The numerator of the second fraction must not be 0!!!");
+            return null;
+        }
         int f3Denominator = f1.denominator * f2.numerator;
         int f3Numerator = f1.numerator * f2.denominator;
         int nod = Math.nod(f3Numerator, f3Denominator);
